@@ -7,18 +7,17 @@
  * Return: 0
  */
 
-int main() {
-    // Write C code here
-    int c = 'a';
+int main(void) {
+	int c = 'a';
     
-    while (c <= 'z')
-    {
-    	if (c != 'q' && c != 'e')
+	while (c <= 'z')
 	{
-		putchar(c);
-        	c++;
+		if (c != 'q' && c != 'e')
+		{
+			putchar(c);
+			c++;
+		}
 	}
-    }
     putchar('\n');
     return 0;
 }

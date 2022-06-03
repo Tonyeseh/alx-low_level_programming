@@ -20,6 +20,7 @@ int main(void)
 
 		if (ch == '9')
 		{
+			putchar(ch);
 			ch = 'a';
 		}
 	}
