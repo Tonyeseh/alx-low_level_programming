@@ -15,8 +15,11 @@ int main(void)
 	while (ch < 123)
 	{
 		putchar(ch);
-		putchar('\n');
 		ch++;
+
 	}
+
+	putchar('\n');
+
 	return (0);
 }
