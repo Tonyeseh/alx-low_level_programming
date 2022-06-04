@@ -8,7 +8,8 @@
  * program prints checks if the last digit of an int n is greater than 5,
  * less than 6 and not 0 and
  * is 0 and prints different messages depending on the value of the last digit.
- * Returns: 0.
+ *
+ * Return: 0.
  */
 
 int main(void)
@@ -18,7 +19,7 @@ int main(void)
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
-	
+
 	lastNum = n % 10;
 
 	if (lastNum > 5)
