@@ -1,5 +1,50 @@
 #include "main.h"
 
+void less_than_98(int n);
+
+/**
+ * less_than_0 - if n is less than 0 it would be called
+ * @n: parameter passed
+ *
+ * Return: prints up to 98
+ */
+void less_than_0(int n)
+{
+	while (n < 98)
+	{
+		int p;
+
+		_putchar('-');
+		p = n * -1;
+		if ((p / 10) == 0)
+		{
+			_putchar((p % 10) + '0');
+		}
+		else
+		{
+			if (p > 99)
+			{
+				_putchar((p / 100) + '0');
+				_putchar(((p / 10) % 10) + '0');
+				_putchar((p % 10) + '0');
+			}
+			else
+			{
+				_putchar((p / 10) + '0');
+				_putchar((p % 10) + '0');
+			}
+		}
+		_putchar(',');
+		_putchar(' ');
+		n++;
+		if (n == 0)
+		{
+			less_than_98(n);
+			break;
+		}
+	}
+}
+
 /**
  * less_than_98 - prints numbers less than 98
  *
@@ -11,33 +56,14 @@ void less_than_98(int n)
 {
 	while (n <= 98)
 	{
-		if (n < 0)
+		if (n >= 10)
 		{
-			int p;
-
-			_putchar('-');
-			p = n * -1;
-			if ((p / 10) == 0)
-			{
-				_putchar((p % 10) + '0');
-			}
-			else
-			{
-				_putchar((p / 10) + '0');
-				_putchar((p % 10) + '0');
-			}
+			_putchar((n / 10) + '0');
+			_putchar((n % 10) + '0');
 		}
 		else
 		{
-			if (n >= 10)
-			{
-				_putchar((n / 10) + '0');
-				_putchar((n % 10) + '0');
-			}
-			else
-			{
-				_putchar((n % 10) + 48);
-			}
+			_putchar((n % 10) + 48);
 		}
 		if (n != 98)
 		{
@@ -103,7 +129,11 @@ void greater_than_98(int n)
  */
 void print_to_98(int n)
 {
-	if (n <= 98)
+	if (n < 0)
+	{
+		less_than_0(n);
+	}
+	else if (n <= 98)
 	{
 		less_than_98(n);
 	}
