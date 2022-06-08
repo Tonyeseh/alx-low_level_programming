@@ -8,7 +8,7 @@
 
 int main(void)
 {
-	long unsigned int tmp, new, prev;
+	unsigned long int tmp, new, prev;
 	int n;
 
 	n = 1;
