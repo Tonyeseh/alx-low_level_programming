@@ -15,7 +15,7 @@ int main(void)
 	new = 2;
 	prev = 1;
 	printf("%lu, %lu, ", prev, new);
-	while (n <= 98)
+	while (n <= 96)
 	{
 		tmp = new;
 		new = new + prev;
