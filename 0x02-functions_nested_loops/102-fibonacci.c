@@ -11,7 +11,7 @@ int main(void)
 	long int tmp, prev, new;
 	int n;
 
-	n = 0;
+	n = 1;
 	prev = 1;
 	new = 2;
 	printf("%ld, %ld, ", prev, new);
