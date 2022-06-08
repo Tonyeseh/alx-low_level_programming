@@ -22,7 +22,7 @@ int main(void)
 		prev = tmp;
 		printf("%lu", new);
 		n++;
-		if (n != 99)
+		if (n != 97)
 		{
 			printf(", ");
 		}
