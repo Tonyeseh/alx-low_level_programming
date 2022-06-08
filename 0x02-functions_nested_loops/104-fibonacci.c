@@ -11,18 +11,18 @@ int main(void)
 	unsigned long int tmp, new, prev;
 	int n;
 
-	n = 1;
+	n = 3;
 	new = 2;
 	prev = 1;
 	printf("%lu, %lu, ", prev, new);
-	while (n <= 96)
+	while (n <= 98)
 	{
 		tmp = new;
 		new = new + prev;
 		prev = tmp;
 		printf("%lu", new);
 		n++;
-		if (n != 97)
+		if (n != 99)
 		{
 			printf(", ");
 		}
