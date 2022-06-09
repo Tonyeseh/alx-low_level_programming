@@ -31,7 +31,7 @@ void print_triangle(int size)
 				k++;
 			}
 			i++;
-			if (i < 11)
+			if (i < size + 1)
 			{
 				_putchar('\n');
 			}
