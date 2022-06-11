@@ -12,7 +12,7 @@
 
 void print_number(int n)
 {
-	int d, num;
+	unsigned int d, num;
 
 	d = 1;
 
