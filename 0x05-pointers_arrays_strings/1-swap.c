@@ -11,10 +11,10 @@
 
 void swap(int *a, int *b)
 {
-	int tmp;
+	int *tmp;
 
-	tmp = *a;
-	*a = *b;
-	*b = *a;
+	tmp = a;
+	a = b;
+	b = a;
 
 }
