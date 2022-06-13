@@ -9,12 +9,12 @@
  * Return: Nothing
  */
 
-void swap(int *a, int *b)
+void swap_int(int *a, int *b)
 {
-	int *tmp;
+	int tmp;
 
-	tmp = a;
-	a = b;
-	b = a;
+	tmp = *a;
+	*a = *b;
+	*b = tmp;
 
 }
