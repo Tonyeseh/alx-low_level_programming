@@ -3,7 +3,7 @@
 /**
  * reset_to_98 - changes the value at the address passed
  *
- * @*n: pointer to the integer passed
+ * @n: pointer to the integer passed
  *
  * Return: Nothing
  */
