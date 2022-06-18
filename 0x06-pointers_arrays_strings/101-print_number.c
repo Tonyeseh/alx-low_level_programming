@@ -11,7 +11,7 @@
 
 void print_number(int n)
 {
-	int place, d;
+	unsigned int place, d;
 
 	d = 1;
 	if (n < 0)
