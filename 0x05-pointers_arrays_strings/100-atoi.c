@@ -11,14 +11,14 @@
 int _atoi(char *s)
 {
 	int num, sign, i;
-	
+
 	num = i = 0;
-	sign = 1;
+	sign = 0;
 	while (s[i] != '\0')
 	{
 		if (s[i] == '-')
 		{
-			sign *= -1;
+			sign++;
 		}
 		if (s[i] >= '0' && s[i] <= '9')
 		{
@@ -31,6 +31,9 @@ int _atoi(char *s)
 		}
 		i++;
 	}
-	num *= sign;
+	if (sign % 2 == 1)
+	{
+		num = -num;
+	}
 	return (num);
 }
