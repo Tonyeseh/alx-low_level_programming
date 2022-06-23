@@ -41,7 +41,7 @@ int lenstr(char *s)
 
 
 /**
- * check_padlindrome - checks if a string is a palindrome
+ * check_palindrome - checks if a string is a palindrome
  *
  * @s: string
  * @len: length of string
