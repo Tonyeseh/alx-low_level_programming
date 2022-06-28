@@ -3,7 +3,7 @@
 #include <string.h>
 
 /**
- * argtostr - concatenates all the arguments of your program
+ * argstostr - concatenates all the arguments of your program
  *
  * @ac: argument count
  * @av: argument vector
@@ -27,7 +27,7 @@ char *argstostr(int ac, char **av)
 	{
 		len += strlen(av[i]);
 	}
-	ptr = (char *)malloc((len + ac) * sizeof(char));
+	ptr = (char *)malloc((len + ac - 1) * sizeof(char));
 	if (ptr == NULL)
 	{
 		return (NULL);
