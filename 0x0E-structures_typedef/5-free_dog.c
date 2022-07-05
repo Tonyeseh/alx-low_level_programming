@@ -1,5 +1,5 @@
 #include <stdlib.h>
-#include "main.c"
+#include "main.h"
 
 /**
  * free_dog - frees dog struct
