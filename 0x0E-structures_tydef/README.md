@@ -1,1 +1,1 @@
-Definition of tasks in this directory
+Definition of tasks in this directory.
