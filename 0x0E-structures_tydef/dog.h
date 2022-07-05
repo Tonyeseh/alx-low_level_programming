@@ -3,7 +3,7 @@
 #define DOG
 
 /**
- * dog - defines dog name, age and owner.
+ * struct dog - defines dog name, age and owner.
  *
  * @name: name of dog (string)
  * @age: age of dog
