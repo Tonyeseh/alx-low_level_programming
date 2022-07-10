@@ -1,9 +1,10 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
  * _strlen - finds the length of a string
  *
- * @str - string to be calculated
+ * @str: string to be calculated
  *
  * Return: 0 or length of string
  *
@@ -40,7 +41,6 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	len_n2 = _strlen(n2);
 	hold = 0;
 	larger = len_n1;
-
 	/* checks if n1 is greater than n2 */
 	if (len_n2 > len_n1)
 		larger = len_n2;
@@ -49,29 +49,28 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	if (size_r < larger + 2)
 		return (0);
 
-	larger++;
+	larger++, len_n1--, len_n2--;
 	r[larger] = '\0';
 	while (larger > 0)
 	{
-		if ((len_n1 - 1) < 0 && (len_n2 - 1) < 0 && hold > 0)
-		{
+		if ((len_n1) < 0 && (len_n2) < 0 && hold == 0)
+			break;
+		else if ((len_n1) < 0 && (len_n2) < 0 && hold > 0)
 			r[larger - 1] = hold + '0';
-		}
-		else if ((len_n2 - 1) < 0)
+		else if ((len_n2) < 0)
 		{
-			r[larger - 1] = (((n1[len_n1 - 1] - '0') + hold) % 10) + '0';
-			hold = ((n1[len_n1 - 1] - '0') + hold) / 10;
+			r[larger - 1] = (((n1[len_n1] - '0') + hold) % 10) + '0';
+			hold = ((n1[len_n1] - '0') + hold) / 10;
 		}
-		else if ((len_n1 - 1) < 0)
+		else if ((len_n1) < 0)
 		{
-			r[larger - 1] = (((n2[len_n2 - 1]  - '0') + hold) % 10) + '0';
-			hold = ((n2[len_n2 - 1] - '0') + hold) / 10;
+			r[larger - 1] = (((n2[len_n2]  - '0') + hold) % 10) + '0';
+			hold = ((n2[len_n2] - '0') + hold) / 10;
 		}
 		else
 		{
-			r[larger - 1] = (((n1[len_n1 - 1] - '0') + (n2[len_n2 - 1] - '0')\
-					      + hold) % 10) + '0';
-			hold = ((n2[len_n2 - 1] - '0') + (n1[len_n1 - 1] - '0') + hold) / 10;
+			r[larger - 1] = ((n1[len_n1] - '0' + (n2[len_n2] - '0') + hold) % 10) + '0';
+			hold = ((n2[len_n2] - '0') + (n1[len_n1] - '0') + hold) / 10;
 		}
 		larger--, len_n1--, len_n2--;
 	}
