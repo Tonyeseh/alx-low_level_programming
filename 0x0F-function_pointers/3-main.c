@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
 	num2 = atoi(argv[3]);
 
 	func_ptr = get_op_func(argv[2]);
-	if (func_ptr == NULL)
+	if (func_ptr == NULL || argv[2][1])
 	{
 		printf("Error\n");
 		return (99);
