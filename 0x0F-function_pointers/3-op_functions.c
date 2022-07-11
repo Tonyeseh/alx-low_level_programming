@@ -61,12 +61,12 @@ int op_div(int a, int b)
 }
 
 /**
- * op_add - adds two integers
+ * op_mod - adds two integers
  *
  * @a: first integer
  * @b: second integer
  *
- * Return: sum of and b
+ * Return: mod of and b
  *
  */
 
