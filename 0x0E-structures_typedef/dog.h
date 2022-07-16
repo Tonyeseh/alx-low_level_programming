@@ -2,6 +2,8 @@
 
 #define DOG
 
+#include <stddef.h>
+
 /**
  * struct dog - defines dog name, age and owner.
  *
