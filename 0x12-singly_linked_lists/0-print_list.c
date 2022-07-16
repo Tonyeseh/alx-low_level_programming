@@ -5,7 +5,7 @@
  * print_list - prints all the elements of a list_t list
  *
  * Description - if st is NULL print [0] (nil)
- * 
+ *
  * @h: pointer to list_h struct
  *
  * Return: numbe of nodes
