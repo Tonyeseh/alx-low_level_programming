@@ -4,7 +4,7 @@
 /**
  * add_nodeint - adds a new node at the befinning of a listint_t list
  *
- * @h: pointer to the the pointer that stores the first
+ * @head: pointer to the the pointer that stores the first
  * node of a listint_t list
  * @n: integer to be added to the node
  *
