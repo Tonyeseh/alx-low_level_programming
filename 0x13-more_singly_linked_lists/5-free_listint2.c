@@ -14,7 +14,8 @@
 
 void free_listint2(listint_t **head)
 {
-	listint_t *tmp, *node;
+	listint_t *tmp;
+	listint_t *node;
 
 	if (*head != NULL)
 	{
@@ -25,7 +26,7 @@ void free_listint2(listint_t **head)
 			tmp = tmp->next;
 			free(node);
 		}
+		*head = NULL;
 	}
 
-	*head = NULL;
 }
