@@ -41,7 +41,7 @@ int power(int pow)
 }
 
 /**
- * converts a binary number to an unsigned int
+ * binary_to_uint - converts a binary number to an unsigned int
  *
  * @b: pointer to the number passed
  *
