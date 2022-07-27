@@ -18,7 +18,7 @@ char *create_buffer(char *file)
 	char *buffer;
 
 	buffer = malloc(sizeof(char) * 1024);
-	
+
 	if (buffer == NULL)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file);
@@ -56,9 +56,9 @@ void close_file(int fd)
  * @argv: argument vector
  *
  * Description: if argument count is not 3 - exit code 97
- * 		if file_from does not exist or cannot be read - exit code 98
- * 		if file_to cannot be created or written to - exit code 99
- * 		if file_to or file_from cannot be closed - exit code 100.
+ *		if file_from does not exist or cannot be read - exit code 98
+ *		if file_to cannot be created or written to - exit code 99
+ *		if file_to or file_from cannot be closed - exit code 100.
  *
  * Return: 0 on success
  */
@@ -79,8 +79,7 @@ int main(int argc, char **argv)
 	r = read(file_from, buffer, 1024);
 	file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 
-	do
-	{
+	do {
 		if (file_from == -1 || r == -1)
 		{
 			dprintf(STDERR_FILENO, "Can't read from file %s\n", argv[1]);
@@ -98,8 +97,7 @@ int main(int argc, char **argv)
 		r = read(file_from, buffer, 1024);
 		file_to = open(argv[2], O_WRONLY | O_APPEND);
 
-	}
-	while (r > 0);
+	} while (r > 0);
 
 	free(buffer);
 	close_file(file_from);
