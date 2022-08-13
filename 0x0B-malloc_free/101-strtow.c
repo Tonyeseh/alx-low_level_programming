@@ -32,18 +32,22 @@ char **strtow(char *str)
 		}
 		free(strcopy);
 
-		strcopy = strdup(str);
-		tow = malloc(sizeof(char *) * len);
-		if (tow != NULL)
+		if (len > 1)
 		{
-			tok = strtok(strcopy, " ");
-			while (tok)
+			strcopy = strdup(str);
+			tow = malloc(sizeof(char *) * len);
+			if (tow != NULL)
 			{
-				tow[i] = tok;
-				tok = strtok(NULL, " ");
-				i++;
+				tok = strtok(strcopy, " ");
+				while (tok)
+				{
+					tow[i] = tok;
+					tok = strtok(NULL, " ");
+					i++;
+				}
+				tok[i] = '\0';
+				return (tow);
 			}
-			return (tow);
 		}
 	}
 	return (NULL);
