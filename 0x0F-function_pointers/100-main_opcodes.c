@@ -15,10 +15,8 @@
 int main(int argc, char *argv[])
 {
 	int i, bytes;
-	int (*main_ptr)(int, char **);
-	unsigned char code;
+	char *code_ptr;
 
-	main_ptr = main;
 	if (argc != 2)
 	{
 		printf("Error\n");
@@ -31,15 +29,15 @@ int main(int argc, char *argv[])
 		exit(2);
 	}
 
+	code_ptr = (char *)main;
 	for (i = 0; i < bytes; i++)
 	{
-		code = *(unsigned char *)main_ptr;
-		printf("%.2x ", code);
 		if (i == bytes - 1)
+		{
+			printf("%02hhx\n", code_ptr[i]);
 			break;
-		printf(" ");
-		main_ptr++;
+		}
+		printf("%02hhx ", code_ptr[i]);
 	}
-	printf("\n");
 	return (0);
 }
