@@ -4,6 +4,34 @@
 
 
 /**
+ * check_replace_node - checks and replace node value if it already exits
+ *
+ * @head: pointer to linked list head
+ * @key: key of the node
+ * @value: value to add in node
+ *
+ * Return: 1 if it finds and replaces or 0 if it doesn't
+ */
+
+int check_replace_node(hash_node_t **head, const char *key, const char *value)
+{
+	hash_node_t *tmp = *head;
+
+	while (tmp)
+	{
+		if (!strcmp(tmp->key, key))
+		{
+			free(tmp->value);
+			tmp->value = strdup(value);
+			return (1);
+		}
+		tmp = tmp->next;
+	}
+	return (0);
+}
+
+
+/**
  * hash_table_set - adds an element to the hash table.
  *
  * @ht: hash table you want to add or update the key/value to
@@ -31,6 +59,9 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (0);
 
 	index = key_index((unsigned char *)key, ht->size);
+
+	if (check_replace_node(&ht->array[index], key, value))
+		return (1);
 
 	/* Creating element  and inserting it in array*/
 	hash_node = malloc(sizeof(hash_node_t));
