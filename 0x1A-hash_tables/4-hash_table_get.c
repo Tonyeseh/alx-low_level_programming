@@ -21,7 +21,12 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 
 	index = key_index((unsigned char *)key, ht->size);
 	hash_list = ht->array[index];
-	if (hash_list == NULL)
-		return (NULL);
-	return (hash_list->value);
+
+	while(hash_list)
+	{
+		if (!strcmp(hash_list->key, (char *)key))
+			return (hash_list->value);
+		hash_list = hash_list->next;
+	}
+	return (NULL);
 }
