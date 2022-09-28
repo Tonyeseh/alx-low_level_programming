@@ -61,7 +61,11 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	index = key_index((unsigned char *)key, ht->size);
 
 	if (check_replace_node(&ht->array[index], key, value))
+	{
+		free(key_dup);
+		free(value_dup);
 		return (1);
+	}
 
 	/* Creating element  and inserting it in array*/
 	hash_node = malloc(sizeof(hash_node_t));
