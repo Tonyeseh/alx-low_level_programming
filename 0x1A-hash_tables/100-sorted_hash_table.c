@@ -42,10 +42,8 @@ shash_table_t *shash_table_create(unsigned long int size)
 /**
  * insert_node - adds node to the hash table sorted list
  *
- * @hash_table - hash table
- * @bucket - list to keep collision
- * @value - new node value
- * @key - new node key
+ * @ht: hash table
+ * @hash_node: hash node
  *
  * Return: Nothing
  */
@@ -159,7 +157,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 }
 
 /**
- * hash_table_get - retrives a value associated with a key
+ * shash_table_get - retrives a value associated with a key
  *
  * @ht: hash table otu want to look into
  * @key: key you are looking for
@@ -227,6 +225,7 @@ void shash_table_print(const shash_table_t *ht)
 void shash_table_print_rev(const shash_table_t *ht)
 {
 	shash_node_t *tmp = ht->stail;
+
 	if (ht)
 	{
 		printf("{");
