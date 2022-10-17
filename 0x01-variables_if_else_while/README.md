@@ -13,3 +13,19 @@
 		* if the last digit of `n` is 0: the string `and is 0`
 		* if the last digit of `n` is less than 6 and not 0: the string `and is less than 6 and not 0`
 
+* **2. I sometimes suffer from insomnia. And when I can't fall asleep, I play what I call the alphabet game**
+	* [2-print_alphabet.c](./2-print_alphabet.c) - prints the alphabet in lowercase, followed by a new line using `putchar` and calling it twice.
+
+* **3. alphABET**
+	* [3-print_alphabets.c](./3-print_alphabets.c) - prints the alphabet in lowercase, and then in uppercase, followed by a new line using `putchar` just 3 times.
+
+* **4. When I was having that alphabet soup, I never thought that it would pay off**
+	* [4-print_alphabt.c](./4-print_alphabt.c) - prints the alphabet in lowercase, followed by a new line except `q` and `e` using `putchar` twice.
+
+* **5. Numbers**
+	* [5-print_numbers.c](./5-print_numbers.c) - prints all single digit numbers of base 10 starting from `0`, followed by a new line.
+
+* **6. Numberz**
+	* [6-print_numberz.c](./6-print_numberz.c) - prints all single digit numbers of base 10 starting from `0`, followed by a new line without using any variable of type `char` and using `putchar` twice.
+
+
