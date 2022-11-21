@@ -1,13 +1,10 @@
 CC = gcc # compiler to be used
 
-SRC := $(wildcard *.c) # all file with the .c extension
+SRC := main.c school.c# all file with the .c extension
 
 OBJ := $(SRC:%c=%o) # substitutes the SRC to produce object files
 
 NAME = school # name of the executable
 
 all: ${OBJ}
-	gcc ${OBJ} -o ${NAME}
-
-%.o: %.c
-	gcc -c -o $@ $<
+	$(CC) $^ -o ${NAME}
