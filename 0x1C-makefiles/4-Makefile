@@ -1,18 +1,12 @@
-CC = gcc # compiler to be used
-
-SRC := $(wildcard *.c) # all file with the .c extension
-
-OBJ := $(SRC:%c=%o) # substitutes the SRC to produce object files
-
-NAME = school # name of the executable
-
+CC = gcc
+SRC = 
+OBJ = $(SRC:.c=.o)
+NAME = school
 RM = rm -f
+CFLAGS = -Wall -Werror -Wextra -pedantic
 
 all: ${OBJ}
-	gcc $^ -o ${NAME}
-
-%.o: %.c
-	gcc -c -o $@ $<
+	gcc $(CFLAGS) $(OBJ) -o $(NAME)
 
 clean:
 	$(RM) *~ $(NAME)
@@ -20,6 +14,6 @@ clean:
 oclean:
 	${RM} ${OBJ}
 
-fclean: oclean
+fclean: oclean clean
 
 re: fclean all
