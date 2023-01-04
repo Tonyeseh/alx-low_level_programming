@@ -12,6 +12,7 @@
 void print_array(int *array, int size)
 {
 	int i = 0;
+
 	if (array)
 	{
 		printf("Searching in array: ");
@@ -25,7 +26,8 @@ void print_array(int *array, int size)
 }
 
 /**
- * binary_search - searches for a value in a sorted array of integers using the Binary Search algorithm
+ * binary_search - searches for a value in a sorted array of integers
+ *using the Binary Search algorithm
  *
  * @array: pointer to the first element of the array to search in
  * @size: number of elements in array
@@ -46,12 +48,12 @@ int binary_search(int *array, size_t size, int value)
 			mid = (low + high) / 2;
 			print_array(array + low, high - low + 1);
 			if (array[mid] == value)
-				return mid;
+				return (mid);
 			else if (array[mid] > value)
 				high = mid - 1;
 			else
 				low = mid + 1;
 		}
 	}
-	return -1;
+	return (-1);
 }
