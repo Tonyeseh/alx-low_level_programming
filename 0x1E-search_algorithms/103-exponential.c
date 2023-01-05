@@ -99,7 +99,8 @@ int exponential_search(int *array, size_t size, int value)
 		exp *= 2;
 	}
 
-	printf("Value found between indexes [%ld] and [%d]\n", exp / 2, min(exp, size - 1));
+	printf("Value found between indexes [%ld] ", exp / 2);
+	printf("and [%d]\n", min(exp, size - 1));
 
 	return (bin_search(array, exp / 2, min(exp, size - 1), value));
 }
